@@ -8,6 +8,6 @@ addons:
 install:
   - pip install -r requirements.txt
 script:
-  - python test_prime.py
+  - "pytest --cov-report term --cov-report xml:coverage-reports/coverage-report.xml --cov=."
 after_script:
   - sonar-scanner
