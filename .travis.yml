@@ -1,13 +1,23 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 addons:
   sonarcloud:
     organization: pinto18-github
   token: "${SONAR_TOKEN}"
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - "pytest --cov-report term --cov-report xml:coverage-reports/coverage-report.xml --cov=."
+- pytest --cov-report term --cov-report xml:coverage-reports/coverage-report.xml --cov=.
 after_script:
-  - sonar-scanner
+- sonar-scanner
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
+notifications:
+  slack:
+    rooms:
+      secure: TJT7rETnfAg7pv+CDoZnOb7bLKTTJJH+6cEGJ6NnmiX09GQkhxwUFHYKIw91LDXuXwANUfSWJ4D4Iedcb7CImGvyadoVcT4kyJq6RQ1mfuLmcqgUn2gqhQkFwHeap0uQX9NpYjk/2kFPnWlKPpAU3n3sy6eZI+fHHgSklxMI6BPXqMD7jtX7aZGxrAEG1zOQiSwZqnSyKS+hbJWpGfxRArUfrye/5B06W6m1fq5+MjNgm3/A5CH9NGEbPVlAn2JFOyce1COUHFcso0gs36lWDHuIK117A0jHp5JqqGTFxTqNyWP09zPj5HDwPlSKHINdNhlzdQk5Qfr1T600MPxl9IICcfFb6ldBoKIIH1411hDUJtt0hgYMb1w5La+uBJx+U4Wzx6MkDGfdcaLrwjjPijV3ylEBr2+HUocV3yCywpLL6HtUXwJd25zBFp4jItCmlXA4Fz2wkFMOEt6FDylg3mhCldMdyz6+uSh852qa5O6OL2N/OHRqV252T9Xq3Fez1qmRrZ6ckV5DMDX54ns2Ty3Lev0PxjapeKXP+tOk/l/9jRHphYvjJD7q3jTG44Ei+n+Vd4sVA5WmwHDcIwLBIwmo2KERN4kxC5Dk2AuZvziOIfXdXh/sWpdPP1CaYUt2bweSO6LdBYzlLsTrhsVwkw3nJDsQADXHpjlVu1ZVehA=
+    on_success: always`
+    on_failure: always
