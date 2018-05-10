@@ -1,6 +1,8 @@
 language: python
 python:
 - '3.6'
+git:
+  depth: 1
 addons:
   sonarcloud:
     organization: pinto18-github
@@ -14,6 +16,10 @@ after_script:
 notifications:
   slack:
     rooms:
-      secure: eApRIkaTJD7jh+C/I/Oi//YiuDbjOQ0ASeGa9BbNFbqt2vSjLm1BNwhPXwghNCYRFxnTk+BENPbQ5x8bMPJXbjJgcTyXvApW6BwQD988iyxSG3XsGNbs0jxkWH0IXrnBOh8CW31RrEcN7TnDDzqWpe5iJVsUSyaZwKmooSqUx9wSEVApYEwDY0KlunDCUVS+c8oifb8taFfXIgqNsDp24Ej52Em9ExkI8J7FpT/0qZ4DKua0j3TwqY06BOw3mMLtzGm8MBEj72sah1Dq/Y1qcFJvoAw0LiZRRRmg8D7Y0W/TP2bnLzMrhb+r7jXi5u4SJlqt087ZKkX/XeFYyKvKhbDNQS94oZ6bOiC+YZSInZuNUBHA1Ronmrmm9XxbldRqDY8tgk3vDeLBmMYbHNDDiaPWCHEC2expjD001EIIKz00XV3coQhAar0UPe2Qg2M8nQjNaAYZyG4LClyfczp6UDsi+HmxL1BdfIyKQhoPBRK7NhMRNxWtiBdhgW4VP/R2SJRKnLuDRue9gZZQf92SfgcGL2AFZ4uIYhZP93sTH1OtZEj1x5Gk1dtwyL5vEgF/uOEKjlDLOPluu70I+oOUDoGbx0WDd5ocVVw1rk2eYte9yV2g+/Px+kwcsyJLeAl+zbBmXjoZuiJOJwp3J5d+hKw52uLfPpz8lieiKpNXNKM=
+      secure: MussAlcKomoFJk3h051fMWjB2+UqejPf6UFjp+5VVaFlN8z1W/5Qqet8PQrVJ7m8QM0S2/UVEA/utwYg521k6YzUbrhzKHhm/XGicXHgO8JTGVjQOa0itS4eyxs6/+ZveGesyFkLVp7wWbyVBe/wQ7nzVZZ8MFuVMH2lmwbpNIvNQBspoTHY5dLi0R53CXgsdvZi0BqSlxpJoJeQJX+hOMu0+zXuNfwHltiWnaQCsF0AhAEGOHi2tgkjovI3bUA3q9liJygPZenASF83wKAv26TPDVDL31G4bXrOEg2n/oj9ioYTkh5wv03hiC3IKDwBkfiQVoO+dlKViK8CvQetu9K+h5uKhtsJb84Lf53D+vQAA30s0qgCiEJDUFOVCdTuLKt18zyu2svtdyuKch+NvJ8xKWlFwJMoX9cTjaR1WJa2KHBEq9928Rf5nSxL3J8pTpAMS39ihNU/H3GPB6NTLR3oMg4f2YV/dugWqx4mJUsm0tMvxjQ3kQFajRcps7Rtj7ob6zyV/s0h7K3oURw8GFNrETx0Frg1uqiVDcRyXU7FxljCnTl+yHQJxExXcfioDxVXHbHXW5nGb/Kz8SM5QWSoxC1n+TWMKpX0M/Or7RWcginrpMhWIZku7fxz7AmU5SnVucdNTpZkiohUfTiQPKQsMTcZnfyVAioRQXFItCE=
     on_success: always
     on_failure: always
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
