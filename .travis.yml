@@ -1,7 +1,13 @@
 language: python
 python:
   - "3.6"
+addons:
+  sonarcloud:
+    organization:pinto18-github
+  token: "${SONAR_TOKEN}"
 install:
   - pip install -r requirements.txt
 script:
   - "pytest --cov-report term --cov-report xml:coverage-reports/coverage-report.xml --cov=."
+after_script:
+  - sonar-scanner
