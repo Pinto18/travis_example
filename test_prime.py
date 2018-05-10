@@ -3,7 +3,7 @@ from checkPrime import check
 
 DATA_TABLE =[
     {'input': 7, 'expected': True},
-    {'input': 10, 'expected': False}
+    {'input': 10, 'expected': True}
 ]
 
 class TestPrime(unittest.TestCase):
