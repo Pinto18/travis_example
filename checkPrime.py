@@ -12,11 +12,11 @@ import math
     # return isPrime
 
 def isPrime(num):
-    if num < 1:
+    if num < 2:
         return False
-    for index in range(2, num - 1):
+    for index in range(2, num):
         if num % index == 0: 
-            return False 
+            return False
     return True 
 
 def main():
